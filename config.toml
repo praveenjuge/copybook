@@ -5,6 +5,7 @@ title = "Copy Book"
 enableRobotsTXT = true
 enableEmoji = true
 canonifyURLs = true
+enableGitInfo = true
 
 [params]
   description = "Praveen Juge is designing and making things for-and-in web, this is his personal website. And he likes speaking about himself in third person."

@@ -1,0 +1,20 @@
+[build]
+  command = "npm run build"
+  publish = "public"
+
+[build.environment]
+  HUGO_VERSION = "0.99.1"
+
+[context.production.environment]
+  HUGO_ENV = "production"
+  NODE_ENV = "production"
+
+[build.processing.css]
+  bundle = true
+  minify = true
+
+[build.processing.html]
+  pretty_urls = true
+
+[build.processing.images]
+  compress = true

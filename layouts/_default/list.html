@@ -1,7 +1,7 @@
 {{ define "main" }}
 
 <h1 class="font-alegreya mt-4 mb-8 text-3xl font-bold tracking-tight">
-  {{ .Title | humanize | title }}
+  {{ .Title | humanize | title | singularize }}
 </h1>
 
 {{ partial "card" . }} {{end}}

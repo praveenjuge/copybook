@@ -6,6 +6,21 @@
     <title>Copy Book</title>
     <meta name="theme-color" content="#fafaf9" />
     <link rel="stylesheet" href="/main.css" />
+    <script>
+      var copy = function (elem) {
+        // stop propagation
+        event.stopPropagation();
+
+        const copyRect = document.getElementById(elem + "-copy");
+        copyRect.innerHTML = "Copied!";
+        navigator.clipboard.writeText(
+          document.getElementById(elem + "-content").innerText
+        );
+        setTimeout(function () {
+          copyRect.innerHTML = "Copy";
+        }, 1000);
+      };
+    </script>
   </head>
   <body class="antialiased text-stone-900 bg-white text-sm">
     {{ partial "aside" . }}

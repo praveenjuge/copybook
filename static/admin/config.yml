@@ -1,0 +1,39 @@
+backend:
+  name: git-gateway
+  branch: main
+media_folder: static/images
+public_folder: /images
+site_url: "https://copybook.netlify.app/"
+display_url: "https://copybook.netlify.app/"
+logo_url: https://copybook.netlify.app/images/logo.svg
+collections:
+  - name: "authentication"
+    label: "authentication"
+    folder: "content/authentication"
+    create: true
+    slug: "{{slug}}"
+    editor:
+      preview: false
+    fields:
+      - {
+          label: "categories",
+          name: "categories",
+          widget: "hidden",
+          default: "authentication",
+        }
+      - {
+          label: "Mood",
+          name: "mood",
+          widget: "select",
+          options:
+            [
+              "Cheerful",
+              "Whimsical",
+              "Lighthearted",
+              "Quirky",
+              "Thankful",
+              "Optimistic",
+            ],
+        }
+      - { label: "Tags", name: "tags", widget: "list", default: ["news"] }
+      - { label: "Body", name: "body", widget: "markdown" }

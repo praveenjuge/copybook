@@ -1,24 +1,109 @@
-<div class="grid gap-4 grid-cols-4 font-medium">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 font-medium gap-px">
   {{ if eq .Kind "home" }} {{range .Site.RegularPages }}
-  <a
-    class="bg-stone-100 border border-stone-200 rounded p-4 block hover:bg-stone-200 transition"
-    href="{{.Permalink}}"
+  <div
+    class="bg-stone-50 transition group overflow-hidden ring-1 ring-stone-200/75 focus:z-10 focus:outline-none focus:ring-2 focus:ring-stone-400 hover:ring-stone-300 hover:z-10 flex flex-col justify-between items-start"
   >
-    {{.Content}}
-  </a>
+    <a
+      href="{{.Permalink}}"
+      id="{{ .File.UniqueID }}-content"
+      class="px-5 pt-5 pb-4 flex w-full"
+      >{{.Content}}</a
+    >
+    <button
+      class="flex items-center font-medium space-x-1 ml-5 mb-5 text-slate-600 hover:text-slate-900 transition"
+      onclick="copy('{{ .File.UniqueID }}')"
+    >
+      <svg
+        viewBox="0 0 256 256"
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-4 w-4"
+      >
+        <polyline
+          points="168 168 216 168 216 40 88 40 88 88"
+          fill="none"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="20"
+        ></polyline>
+        <rect
+          x="40"
+          y="88"
+          width="128"
+          height="128"
+          fill="none"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="20"
+        ></rect>
+      </svg>
+      <span id="{{ .File.UniqueID }}-copy">Copy</span>
+    </button>
+  </div>
   {{end}} {{ else if eq .Kind "taxonomy" }} {{range .Pages }}
   <a
-    class="bg-stone-100 border border-stone-200 rounded p-4 block hover:bg-stone-200 transition"
+    class="bg-stone-50 p-5 block transition group overflow-hidden ring-1 ring-stone-200/75 focus:z-10 focus:outline-none focus:ring-2 focus:ring-stone-400 hover:ring-stone-300 hover:z-10"
     href="{{.Permalink}}"
   >
-    {{.Title}}
+    {{.Title | title}}
   </a>
-  {{end}} {{else}} {{range .Pages }}
-  <a
-    class="bg-stone-100 border border-stone-200 rounded p-4 block hover:bg-stone-200 transition"
-    href="{{.Permalink}}"
+  {{end}} 
+
+  {{ else if eq .Kind "page" }}  
+  
+    {{range .Site.Sections }}
+      <a
+        class="bg-stone-50 p-5 block transition group overflow-hidden ring-1 ring-stone-200/75 focus:z-10 focus:outline-none focus:ring-2 focus:ring-stone-400 hover:ring-stone-300 hover:z-10"
+        href="{{.Permalink}}"
+      >
+        {{.Title}}
+      </a>
+    {{end}} 
+    
+  {{else}} 
+  
+  {{range .Pages }}
+  <div
+    class="bg-stone-50 transition group overflow-hidden ring-1 ring-stone-200/75 focus:z-10 focus:outline-none focus:ring-2 focus:ring-stone-400 hover:ring-stone-300 hover:z-10 flex flex-col justify-between items-start"
   >
-    {{.Content}}
-  </a>
+    <a
+      href="{{.Permalink}}"
+      id="{{ .File.UniqueID }}-content"
+      class="px-5 pt-5 pb-4 flex w-full"
+      >{{.Content}}</a
+    >
+    <button
+      class="flex items-center font-medium space-x-1 ml-5 mb-5 text-slate-600 hover:text-slate-900 transition"
+      onclick="copy('{{ .File.UniqueID }}')"
+    >
+      <svg
+        viewBox="0 0 256 256"
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-4 w-4"
+      >
+        <polyline
+          points="168 168 216 168 216 40 88 40 88 88"
+          fill="none"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="20"
+        ></polyline>
+        <rect
+          x="40"
+          y="88"
+          width="128"
+          height="128"
+          fill="none"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="20"
+        ></rect>
+      </svg>
+      <span id="{{ .File.UniqueID }}-copy">Copy</span>
+    </button>
+  </div>
   {{end}} {{end}}
 </div>

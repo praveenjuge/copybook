@@ -4,13 +4,11 @@ title = "Copy Book"
 
 enableRobotsTXT = true
 enableEmoji = true
-canonifyURLs = true
-enableGitInfo = true
 
 [taxonomies]
-  category = 'categories'
   tag = 'tags'
   mood = 'mood'
+  category = 'categories'
 
 [params]
   description = ""

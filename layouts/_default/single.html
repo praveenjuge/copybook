@@ -1,1 +1,26 @@
-{{ define "main" }}{{ .Content }}{{ end }}
+{{ define "main" }}
+
+<div class="max-w-2xl mx-auto space-y-5">
+  <div
+    class="bg-stone-100 border border-stone-200 rounded p-5 block text-base"
+  >
+    {{ .Content }}
+  </div>
+
+  <div class="space-y-2">
+    <p>Category: {{ with .Page.Section }}{{ . | title }}{{ end }}</p>
+    <p>Tags: {{ with .Params.tags }}{{ delimit . ", " }}{{ end }}</p>
+    <p>Mood: {{ with .Params.mood }}{{ . | title }}{{ end }}</p>
+    <a     
+      class="flex"    
+      href=https://github.com/praveenjuge/copybook/blob/main/content/{{ .File.Path }}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Edit on GitHub
+    </a>
+  </div>
+
+</div>
+
+{{ end }}

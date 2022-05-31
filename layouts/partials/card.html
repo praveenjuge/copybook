@@ -1,0 +1,24 @@
+<div class="grid gap-4 grid-cols-4 font-medium">
+  {{ if eq .Kind "home" }} {{range .Site.RegularPages }}
+  <a
+    class="bg-stone-100 border border-stone-200 rounded p-4 block hover:bg-stone-200 transition"
+    href="{{.Permalink}}"
+  >
+    {{.Content}}
+  </a>
+  {{end}} {{ else if eq .Kind "taxonomy" }} {{range .Pages }}
+  <a
+    class="bg-stone-100 border border-stone-200 rounded p-4 block hover:bg-stone-200 transition"
+    href="{{.Permalink}}"
+  >
+    {{.Title}}
+  </a>
+  {{end}} {{else}} {{range .Pages }}
+  <a
+    class="bg-stone-100 border border-stone-200 rounded p-4 block hover:bg-stone-200 transition"
+    href="{{.Permalink}}"
+  >
+    {{.Content}}
+  </a>
+  {{end}} {{end}}
+</div>

@@ -1,4 +1,4 @@
-baseURL = "https://copybook.com/"
+baseURL = "https://copybook.netlify.app/"
 languageCode = "en-us"
 title = "Copy Book"
 
@@ -6,6 +6,11 @@ enableRobotsTXT = true
 enableEmoji = true
 canonifyURLs = true
 enableGitInfo = true
+
+[taxonomies]
+  category = 'categories'
+  tag = 'tags'
+  mood = 'mood'
 
 [params]
   description = ""

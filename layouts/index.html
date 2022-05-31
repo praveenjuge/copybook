@@ -1,1 +1,13 @@
-{{ define "main" }} {{ .Content }} {{ end }}
+{{ define "main" }}
+
+<div class="max-w-xl mx-auto pt-10 pb-16 space-y-2">
+  <h1 class="text-3xl tracking-tight font-serif">
+    All that is gold does not glitter; Not all those who wander are lost
+  </h1>
+  <p class="text-stone-500 text-base">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquam erat
+    urna arcu nisl. Nam nunc leo tellus laoreet.
+  </p>
+</div>
+
+{{ partial "card" . }} {{ end }}

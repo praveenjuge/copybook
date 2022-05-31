@@ -2,13 +2,13 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <!-- CSS -->
+    <title>Copy Book</title>
+    <meta name="theme-color" content="#fafaf9" />
     <link rel="stylesheet" href="/main.css" />
   </head>
-  <body>
-    {{ block "main" . }}{{ end }}
+  <body class="antialiased text-stone-900 bg-white text-sm">
+    {{ partial "aside" . }}
+    <main class="p-6 md:ml-60">{{ block "main" . }}{{ end }}</main>
   </body>
 </html>

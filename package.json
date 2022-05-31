@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "build": "npm-run-all --parallel build:*",
+    "build": "npm-run-all build:*",
     "build:css": "NODE_ENV=production ./node_modules/tailwindcss/lib/cli.js -o ./static/main.css --minify",
     "build:hugo": "hugo --minify",
     "dev": "npm-run-all --parallel dev:*",

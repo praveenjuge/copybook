@@ -7,19 +7,28 @@ site_url: "https://copybook.netlify.app/"
 display_url: "https://copybook.netlify.app/"
 logo_url: https://copybook.netlify.app/images/logo.svg
 collections:
-  - name: "authentication"
-    label: "authentication"
-    folder: "content/authentication"
+  - name: "Content"
+    identifier_field: body
+    label: "Content"
+    folder: "content"
     create: true
     slug: "{{slug}}"
     editor:
       preview: false
     fields:
       - {
-          label: "categories",
+          label: "Categories",
           name: "categories",
-          widget: "hidden",
-          default: "authentication",
+          widget: "select",
+          options:
+            [
+              "Authentication",
+              "Creation",
+              "Empty",
+              "Loading",
+              "Onboarding",
+              "Settings",
+            ],
         }
       - {
           label: "Mood",

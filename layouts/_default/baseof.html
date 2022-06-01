@@ -4,13 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Copy Book</title>
-    <meta name="theme-color" content="#fafaf9" />
     <link rel="stylesheet" href="/main.css" />
     <script>
       var copy = function (elem) {
-        // stop propagation
-        event.stopPropagation();
-
         const copyRect = document.getElementById(elem + "-copy");
         copyRect.innerHTML = "Copied!";
         navigator.clipboard.writeText(
@@ -22,7 +18,7 @@
       };
     </script>
   </head>
-  <body class="antialiased text-stone-900 bg-white text-sm">
+  <body class="antialiased text-slate-900 bg-white text-sm">
     {{ partial "aside" . }}
     <main class="p-6 md:ml-60">{{ block "main" . }}{{ end }}</main>
   </body>

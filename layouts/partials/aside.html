@@ -1,5 +1,5 @@
 <aside
-  class="p-5 bg-stone-50 border-r border-stone-100 w-60 font-medium min-h-screen h-full fixed left-0 top-0 bottom-0 flex flex-col"
+  class="p-5 bg-slate-50 border-r border-slate-100 w-60 font-medium min-h-screen h-full fixed left-0 top-0 bottom-0 flex flex-col"
 >
   <div class="flex-1 space-y-6">
     <a href="/">
@@ -19,21 +19,21 @@
       </svg>
     </a>
     <div class="space-y-0.5 flex flex-col items-start">
-      <a href="/tags/" class="text-stone-500 hover:text-stone-900">Tags</a>
+      <a href="/tags/" class="text-slate-500 hover:text-slate-900">Tags</a>
       {{ range .Site.Taxonomies.tags }}
         <a href="{{ .Page.Permalink }}">#{{ .Page.Title }}</a>
       {{ end }}
       <a href="/tags/">More</a>
     </div>
     <div class="space-y-0.5 flex flex-col items-start">
-      <a href="/categories/" class="text-stone-500 hover:text-stone-900">Categories</a>
+      <a href="/categories/" class="text-slate-500 hover:text-slate-900">Categories</a>
       {{ range .Site.Taxonomies.categories }}
         <a href="{{ .Page.Permalink }}">{{ .Page.Title | title }}</a>
       {{ end }}
       <a class="flex" href="/categories/">More</a>
     </div>
     <div class="space-y-0.5 flex flex-col items-start">
-      <a href="/mood/" class="text-stone-500 hover:text-stone-900">Mood</a>
+      <a href="/mood/" class="text-slate-500 hover:text-slate-900">Mood</a>
       {{ range .Site.Taxonomies.mood }}
         <a href="{{ .Page.Permalink }}">{{ .Page.Title | title }}</a>
       {{ end }}
@@ -45,13 +45,13 @@
       target="_blank"
       rel="noopener noreferrer"
       href="https://twitter.com/praveenjuge">
-      Twitter
+      Follow on Twitter
     </a>
     <a 
       href=https://github.com/praveenjuge/copybook/
       target="_blank"
       rel="noopener noreferrer">
-      GitHub
+      View on GitHub
     </a>
   </div>
 </aside>

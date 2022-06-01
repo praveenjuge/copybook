@@ -9,6 +9,14 @@
   </head>
   <body>
     <!-- Include the script that builds the page and powers Netlify CMS -->
-    <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+    <script src="https://unpkg.com/netlify-cms-widget-create-select"></script>
+    <script src="https://unpkg.com/netlify-cms/dist/netlify-cms.js"></script>
+    <script>
+      CMS.registerWidget(
+        "create-select",
+        window.CreatableSelectControl,
+        window.CreatableSelectPreview
+      );
+    </script>
   </body>
 </html>

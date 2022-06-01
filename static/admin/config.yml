@@ -16,33 +16,28 @@ collections:
     editor:
       preview: false
     fields:
-      - {
-          label: "Categories",
-          name: "categories",
-          widget: "select",
-          options:
-            [
-              "Authentication",
-              "Creation",
-              "Empty",
-              "Loading",
-              "Onboarding",
-              "Settings",
-            ],
-        }
-      - {
-          label: "Mood",
-          name: "mood",
-          widget: "select",
-          options:
-            [
-              "Cheerful",
-              "Whimsical",
-              "Lighthearted",
-              "Quirky",
-              "Thankful",
-              "Optimistic",
-            ],
-        }
-      - { label: "Tags", name: "tags", widget: "list", default: ["news"] }
-      - { label: "Body", name: "body", widget: "markdown" }
+      - name: "mood"
+        label: "Mood"
+        widget: "create-select"
+        mode: "xml"
+        url: "https://copybook.netlify.app/mood/index.xml"
+        query: "item > title"
+        multiple: false
+        required: true
+      - name: "categories"
+        label: "Categories"
+        widget: "create-select"
+        mode: "xml"
+        url: "https://copybook.netlify.app/categories/index.xml"
+        query: "item > title"
+        multiple: false
+        required: true
+      - name: "tags"
+        label: "Tags"
+        widget: "create-select"
+        mode: "xml"
+        url: "https://copybook.netlify.app/tags/index.xml"
+        query: "item > title"
+        multiple: true
+        required: true
+      - { label: "Body", name: "body", widget: "markdown", required: true }

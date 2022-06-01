@@ -1,8 +1,9 @@
 ---
 mood: Cheerful
-categories: empty
+categories: Empty
 tags:
   - empty
   - inbox
 ---
+
 You’re all caught up!

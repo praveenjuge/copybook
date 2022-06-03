@@ -6,10 +6,10 @@
     <a
       href="{{.Permalink}}"
       id="{{ .File.UniqueID }}-content"
-      class="inline-flex"
+      class="inline-flex select-all"
       >{{.Content}}</a
     >
-    <div class="flex justify-between items-center w-full mt-4 text-xs">
+    <div class="flex justify-between items-center w-full mt-4 text-xs select-none">
       <button
         class="flex items-center font-medium space-x-1 text-gray-500 hover:text-gray-900 transition"
         onclick="copy('{{ .File.UniqueID }}')"
@@ -61,10 +61,10 @@
     <a
       href="{{.Permalink}}"
       id="{{ .File.UniqueID }}-content"
-      class="inline-flex"
+      class="inline-flex select-all"
       >{{.Content}}</a
     >
-    <div class="flex justify-between items-center w-full mt-4 text-xs">
+    <div class="flex justify-between items-center w-full mt-4 text-xs select-none">
       <button
         class="flex items-center font-medium space-x-1 text-gray-500 hover:text-gray-900 transition"
         onclick="copy('{{ .File.UniqueID }}')"

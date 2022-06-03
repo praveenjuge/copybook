@@ -1,7 +1,7 @@
 <aside
-  class="bg-zinc-100 p-5 w-60 font-medium min-h-screen h-full fixed left-0 top-0 bottom-0 flex flex-col space-y-7 overflow-x-hidden overflow-y-auto"
+  class="bg-gray-50 md:border-r border-gray-100 p-5 md:w-60 font-medium md:min-h-screen h-full md:fixed left-0 top-0 bottom-0 flex flex-col space-y-5 md:space-y-7 md:overflow-x-hidden overflow-y-auto"
 >
-  <div class="flex-1 space-y-7">
+  <div class="flex-1 space-y-5 md:space-y-7">
     <a href="/">
       <svg
         width="115"
@@ -18,35 +18,35 @@
         />
       </svg>
     </a>
-    <div class="space-y-0.5 flex flex-col items-start">
-      <a href="/tags/" class="text-zinc-500 hover:text-zinc-900 flex space-x-0.5 items-center leading-3 mb-1.5">
+    <div class="space-x-2 md:space-x-0 md:space-y-0.5 flex flex-wrap md:flex-col md:items-start">
+      <a href="/tags/" class="text-gray-500 hover:text-gray-900 flex space-x-0.5 items-center leading-3 md:mb-1.5">
         <span>Tags</span>
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-2.5 w-2.5 flex-1 text-zinc-500" viewBox="0 0 256 256"><polyline points="96 48 176 128 96 208" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="34"></polyline></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-2.5 w-2.5 flex-1 text-gray-500" viewBox="0 0 256 256"><polyline points="96 48 176 128 96 208" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="34"></polyline></svg>
       </a>
-      {{ range .Site.Taxonomies.tags }}
+      {{ range first 7 (.Site.Taxonomies.tags.ByCount) }}
         <a href="{{ .Page.Permalink }}">#{{ .Page.Title }}</a>
       {{ end }}
     </div>
-    <div class="space-y-0.5 flex flex-col items-start">
-      <a href="/categories/" class="text-zinc-500 hover:text-zinc-900 flex space-x-0.5 items-center leading-3 mb-1.5">
+    <div class="space-x-2 md:space-x-0 md:space-y-0.5 flex flex-wrap md:flex-col md:items-start">
+      <a href="/categories/" class="text-gray-500 hover:text-gray-900 flex space-x-0.5 items-center leading-3 md:mb-1.5">
         <span>Categories</span>
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-2.5 w-2.5 flex-1 text-zinc-500" viewBox="0 0 256 256"><polyline points="96 48 176 128 96 208" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="34"></polyline></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-2.5 w-2.5 flex-1 text-gray-500" viewBox="0 0 256 256"><polyline points="96 48 176 128 96 208" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="34"></polyline></svg>
       </a>
-      {{ range .Site.Taxonomies.categories }}
+      {{ range first 7 (.Site.Taxonomies.categories.ByCount) }}
         <a href="{{ .Page.Permalink }}">{{ .Page.Title | title }}</a>
       {{ end }}
     </div>
-    <div class="space-y-0.5 flex flex-col items-start">
-      <a href="/mood/" class="text-zinc-500 hover:text-zinc-900 flex space-x-0.5 items-center leading-3 mb-1.5">
+    <div class="space-x-2 md:space-x-0 md:space-y-0.5 flex flex-wrap md:flex-col md:items-start">
+      <a href="/mood/" class="text-gray-500 hover:text-gray-900 flex space-x-0.5 items-center leading-3 md:mb-1.5">
         <span>Mood</span>
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-2.5 w-2.5 flex-1 text-zinc-500" viewBox="0 0 256 256"><polyline points="96 48 176 128 96 208" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="34"></polyline></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-2.5 w-2.5 flex-1 text-gray-500" viewBox="0 0 256 256"><polyline points="96 48 176 128 96 208" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="34"></polyline></svg>
       </a>
-      {{ range .Site.Taxonomies.mood }}
+      {{ range first 7 (.Site.Taxonomies.mood.ByCount) }}
         <a href="{{ .Page.Permalink }}">{{ .Page.Title | title }}</a>
       {{ end }}
     </div>
   </div>
-  <div class="space-y-0.5 flex flex-col items-start">
+  <div class="space-x-2 md:space-x-0 md:space-y-0.5 flex flex-wrap md:flex-col md:items-start">
     <a 
       target="_blank"
       rel="noopener noreferrer"

@@ -3,6 +3,7 @@
     "build": "npm-run-all build:*",
     "build:css": "NODE_ENV=production ./node_modules/tailwindcss/lib/cli.js -o ./static/main.css --minify",
     "build:hugo": "hugo --minify",
+    "deploy": "npm run build && netlify deploy --prod",
     "dev": "npm-run-all --parallel dev:*",
     "dev:css": "NODE_ENV=development ./node_modules/tailwindcss/lib/cli.js -o ./static/main.css -w",
     "dev:hugo": "hugo server"

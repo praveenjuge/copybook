@@ -1,5 +1,5 @@
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 font-medium gap-4">
-  {{ if eq .Kind "home" }} {{range .Site.RegularPages }}
+  {{ if eq .Kind "home" }} {{range .Site.RegularPages.ByDate.Reverse }}
   <div
     class="rounded-lg transition group overflow-hidden ring-1 ring-gray-200/75 focus:z-10 focus:outline-none focus:ring-2 focus:ring-gray-400 hover:ring-gray-300 hover:z-10 p-5 w-full group flex flex-col justify-between"
   >
@@ -54,7 +54,7 @@
     {{ if in .Permalink "/tags" }} #{{.Title | urlize}} {{ else }} {{.Title |
     title}} {{ end }}
   </a>
-  {{end}} {{else}} {{range .Pages }}
+  {{end}} {{else}} {{range .Pages.ByDate.Reverse }}
   <div
     class="rounded-lg transition group overflow-hidden ring-1 ring-gray-200/75 focus:z-10 focus:outline-none focus:ring-2 focus:ring-gray-400 hover:ring-gray-300 hover:z-10 p-5 w-full group flex flex-col justify-between"
   >

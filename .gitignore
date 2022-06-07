@@ -5,3 +5,6 @@ public/
 package-lock.json
 node_modules/
 static/main.css
+
+# Local Netlify folder
+.netlify

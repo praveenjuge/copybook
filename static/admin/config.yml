@@ -3,9 +3,9 @@ backend:
   branch: main
 media_folder: static/images
 public_folder: /images
-site_url: "https://copybook.netlify.app/"
-display_url: "https://copybook.netlify.app/"
-logo_url: https://copybook.netlify.app/images/logo.svg
+site_url: "https://copybook.me/"
+display_url: "https://copybook.me/"
+logo_url: https://copybook.me/images/logo.svg
 collections:
   - name: "Content"
     identifier_field: body
@@ -20,7 +20,7 @@ collections:
         label: "Mood"
         widget: "create-select"
         mode: "xml"
-        url: "https://copybook.netlify.app/mood/index.xml"
+        url: "https://copybook.me/mood/index.xml"
         query: "item > title"
         multiple: false
         required: true
@@ -28,7 +28,7 @@ collections:
         label: "Categories"
         widget: "create-select"
         mode: "xml"
-        url: "https://copybook.netlify.app/categories/index.xml"
+        url: "https://copybook.me/categories/index.xml"
         query: "item > title"
         multiple: false
         required: true
@@ -36,7 +36,7 @@ collections:
         label: "Tags"
         widget: "create-select"
         mode: "xml"
-        url: "https://copybook.netlify.app/tags/index.xml"
+        url: "https://copybook.me/tags/index.xml"
         query: "item > title"
         multiple: true
         required: true

@@ -1,11 +1,9 @@
 {{ define "main" }}
 
 <div
-  class="py-4 md:py-20 relative overflow-hidden mb-6 rounded-lg px-4 bg-[url('/images/pattern.jpg')] bg-cover bg-center"
+  class="max-w-3xl mx-auto grid items-center md:grid-cols-3 gap-10 py-20 mb-6"
 >
-  <div
-    class="p-7 max-w-2xl mx-auto flex flex-col items-start bg-white/50 backdrop-blur-sm rounded-lg"
-  >
+  <div class="flex flex-col items-start col-span-2">
     <h1 class="text-3xl tracking-tight font-extrabold">
       Copy book is a collection of texts that are commonly used around the web.
     </h1>
@@ -29,6 +27,19 @@
       <span>Follow for Updates</span>
     </a>
   </div>
+  <div class="justify-center items-center h-48 hidden md:flex">
+    <img id="imagetag" src="images/emoji/99.jpg" alt="" class="flex h-48" />
+  </div>
 </div>
+
+<script>
+  function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min)) + min;
+  }
+  document.getElementById("imagetag").src =
+    "images/emoji/" + getRandomInt(01, 111) + ".jpg";
+</script>
 
 {{ partial "card" . }} {{ end }}

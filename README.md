@@ -1,6 +1,6 @@
 # Copy Book
 
-Copy book is a collection of words that are commonly used around the web.
+Copy book is a collection of texts that are commonly used around the web.
 
 ## Development
 

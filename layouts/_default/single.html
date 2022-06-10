@@ -5,13 +5,13 @@
     <div class="flex space-x-4">
       <a
         href="javascript:history.back()"
-        class="text-gray-800 hover:text-gray-900 transition font-medium border border-gray-200 hover:border-gray-300 rounded-full px-4 py-2"
+        class="text-stone-800 hover:text-stone-900 transition font-medium border border-stone-200 hover:border-stone-300 rounded-full px-4 py-2"
       >
         ← Go back
       </a>
     </div>
     <a     
-      class="text-gray-800 hover:text-gray-900 transition font-medium border border-gray-200 hover:border-gray-300 rounded-full px-4 py-2" 
+      class="text-stone-800 hover:text-stone-900 transition font-medium border border-stone-200 hover:border-stone-300 rounded-full px-4 py-2" 
       href=https://github.com/praveenjuge/copybook/blob/main/content/{{ .File.Path }}
       target="_blank"
       rel="noopener noreferrer"
@@ -21,21 +21,21 @@
   </div>
 
   <div
-    class="bg-gray-50 border border-gray-100 rounded-lg p-10 block text-base font-semibold text-center select-text"
+    class="bg-stone-50 border border-stone-100 rounded-lg p-10 block text-base font-semibold text-center select-text"
   >
     {{ .Content }}
   </div>
 
-  <div class="divide-y divide-gray-200">
+  <div class="divide-y divide-stone-200">
     {{ with .Params.categories }}
       <div class="flex justify-between items-center py-3.5">
-        <p class="text-gray-500">Category</p>
+        <p class="text-stone-500">Category</p>
         <a class="font-medium" href="{{ "/categories/" }}{{ . | urlize }}">{{ . | title }}</a>
       </div>
     {{ end }}
 
     <div class="flex justify-between items-center py-3.5">
-      <p class="text-gray-500">Tags</p>
+      <p class="text-stone-500">Tags</p>
       <div>
         {{ range $key, $value := .Params.tags }}
           <a class="font-medium" href="{{ "/tags/" }}{{ $value | urlize }}">#{{ $value }}</a>{{ if ne $key (sub (len $.Params.tags) 1) }}, {{ else }}{{ end }}
@@ -45,7 +45,7 @@
 
     {{ with .Params.mood }}
       <div class="flex justify-between items-center py-3.5">
-        <p class="text-gray-500">Mood</p>
+        <p class="text-stone-500">Mood</p>
         <a class="font-medium" href="{{ "/mood/" }}{{ . | urlize }}">{{ . | title }}</a>
       </div>
     {{ end }}

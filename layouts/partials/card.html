@@ -1,105 +1,14 @@
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 font-medium gap-4">
-  {{ if eq .Kind "home" }} {{range .Site.RegularPages.ByDate.Reverse }}
-  <div
-    class="overflow-hidden w-full flex flex-col justify-between border border-gray-200 rounded-lg"
-  >
-    <a
-      href="{{.Permalink}}"
-      id="{{ .File.UniqueID }}-content"
-      class=" select-all p-5 rounded-t-lg border-gray-200 flex-1"
-      >{{.Content}}</a
-    >
-    <div class="flex justify-between items-center w-full px-5 py-4 text-xs select-none rounded-b-lg  border-gray-200">
-      {{ with .Params.categories }}
-        <a class="font-medium text-gray-600 hover:text-gray-900 transition" href="{{ "/categories/" }}{{ . | urlize }}">{{ . | title }}</a>
-      {{ end }}
-      <button
-        class="flex items-center font-medium space-x-1 text-gray-500 hover:text-gray-900 transition"
-        onclick="copy('{{ .File.UniqueID }}')"
-      >
-        <svg
-          viewBox="0 0 256 256"
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-4 w-4"
-        >
-          <polyline
-            points="168 168 216 168 216 40 88 40 88 88"
-            fill="none"
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="20"
-          ></polyline>
-          <rect
-            x="40"
-            y="88"
-            width="128"
-            height="128"
-            fill="none"
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="20"
-          ></rect>
-        </svg>
-        <span id="{{ .File.UniqueID }}-copy">Copy</span>
-      </button>
-    </div>
-  </div>
-  {{end}} {{ else if eq .Kind "taxonomy" }} {{range .Pages }}
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 font-medium gap-6">
+  {{ if eq .Kind "home" }} {{range .Site.RegularPages.ByDate.Reverse }} {{
+  partial "copy-card" . }} {{end}} {{ else if eq .Kind "taxonomy" }} {{range
+  .Pages }}
   <a
-    class="rounded-lg p-5 block transition group overflow-hidden ring-1 ring-gray-200/75 focus:z-10 focus:outline-none focus:ring-2 focus:ring-gray-400 hover:ring-gray-300 hover:z-10"
+    class="rounded-lg p-5 block transition group overflow-hidden ring-1 ring-stone-200/75 focus:z-10 focus:outline-none focus:ring-2 focus:ring-stone-400 hover:ring-stone-300 hover:z-10"
     href="{{.Permalink}}"
   >
     {{ if in .Permalink "/tags" }} #{{.Title | urlize}} {{ else }} {{.Title |
     title}} {{ end }}
   </a>
-  {{end}} {{else}} {{range .Pages.ByDate.Reverse }}
-  <div
-    class="overflow-hidden w-full flex flex-col justify-between border border-gray-200 rounded-lg"
-  >
-    <a
-      href="{{.Permalink}}"
-      id="{{ .File.UniqueID }}-content"
-      class=" select-all p-5 rounded-t-lg border-gray-200 flex-1"
-      >{{.Content}}</a
-    >
-    <div class="flex justify-between items-center w-full px-5 py-4 text-xs select-none rounded-b-lg  border-gray-200">
-      {{ with .Params.categories }}
-        <a class="font-medium text-gray-600 hover:text-gray-900 transition" href="{{ "/categories/" }}{{ . | urlize }}">{{ . | title }}</a>
-      {{ end }}
-      <button
-        class="flex items-center font-medium space-x-1 text-gray-500 hover:text-gray-900 transition"
-        onclick="copy('{{ .File.UniqueID }}')"
-      >
-        <svg
-          viewBox="0 0 256 256"
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-4 w-4"
-        >
-          <polyline
-            points="168 168 216 168 216 40 88 40 88 88"
-            fill="none"
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="20"
-          ></polyline>
-          <rect
-            x="40"
-            y="88"
-            width="128"
-            height="128"
-            fill="none"
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="20"
-          ></rect>
-        </svg>
-        <span id="{{ .File.UniqueID }}-copy">Copy</span>
-      </button>
-    </div>
-  </div>
+  {{end}} {{else}} {{range .Pages.ByDate.Reverse }} {{ partial "copy-card" . }}
   {{end}} {{end}}
 </div>

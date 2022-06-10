@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
+<html prefix="og: http://ogp.me/ns#" lang="{{ .Language }}">
+  <head itemscope itemtype="https://schema.org/WebPage">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Copy Book</title>
+    {{ partial "meta" . }}
     <link rel="stylesheet" href="/main.css" />
     <script>
       var copy = function (elem) {
@@ -18,7 +18,7 @@
       };
     </script>
   </head>
-  <body class="antialiased text-gray-900 bg-white text-sm">
+  <body class="antialiased text-stone-900 bg-white text-sm">
     {{ partial "aside" . }}
     <main class="p-5 md:ml-60">{{ block "main" . }}{{ end }}</main>
   </body>

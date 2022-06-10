@@ -4,4 +4,5 @@ categories: Placeholder
 tags:
   - name
 ---
-Enter your work email address. eg: bruce@wayne.enterprises
+
+Enter your work email address. eg: bruceatwayne.enterprises

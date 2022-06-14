@@ -6,6 +6,7 @@ enableRobotsTXT = true
 enableEmoji = true
 enableGitInfo = true
 canonifyURLs = true
+paginate = 75
 
 [outputs]
   home = ['HTML', 'RSS', 'JSON']

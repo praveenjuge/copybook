@@ -7,6 +7,9 @@ enableEmoji = true
 enableGitInfo = true
 canonifyURLs = true
 
+[outputs]
+  home = ['HTML', 'RSS', 'JSON']
+
 [taxonomies]
   tag = 'tags'
   mood = 'mood'

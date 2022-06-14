@@ -18,3 +18,8 @@
 
 [build.processing.images]
   compress = true
+
+[[headers]]
+  for = "/index.json"
+    [headers.values]
+    Access-Control-Allow-Origin = "*"

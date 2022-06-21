@@ -1,23 +1,22 @@
 <!-- Title Tags -->
 <title itemprop="name">
-  {{ if .Title }} {{ .Title }} {{ else }} {{ .Content | plainify }} {{end}} | {{
-  .Site.Title }}
+  {{ if .Title }} {{ .Title }} {{ else }} {{ .Content | plainify }} {{end}}
 </title>
 <meta
   property="og:title"
-  content=" {{ if .Title }} {{ .Title }} {{ else }} {{ .Content | plainify }} {{end}} | {{ .Site.Title }}"
+  content=" {{ if .Title }} {{ .Title }} {{ else }} {{ .Content | plainify }} {{end}}"
 />
 <meta
   name="twitter:title"
-  content=" {{ if .Title }} {{ .Title }} {{ else }} {{ .Content | plainify }} {{end}} | {{ .Site.Title }}"
+  content=" {{ if .Title }} {{ .Title }} {{ else }} {{ .Content | plainify }} {{end}}"
 />
 <meta
   itemprop="name"
-  content=" {{ if .Title }} {{ .Title }} {{ else }} {{ .Content | plainify }} {{end}} | {{ .Site.Title }}"
+  content=" {{ if .Title }} {{ .Title }} {{ else }} {{ .Content | plainify }} {{end}}"
 />
 <meta
   name="application-name"
-  content=" {{ if .Title }} {{ .Title }} {{ else }} {{ .Content | plainify }} {{end}} | {{ .Site.Title }}"
+  content=" {{ if .Title }} {{ .Title }} {{ else }} {{ .Content | plainify }} {{end}}"
 />
 
 <meta property="og:site_name" content="{{ .Site.Params.sitename }}" />

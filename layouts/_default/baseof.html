@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     {{ partial "meta" . }}
     <link rel="stylesheet" href="/main.css" />
+    <link
+      rel="preconnect"
+      href="https://RMNJ9XLDDW-dsn.algolia.net"
+      crossorigin
+    />
     <script>
       var copy = function (elem) {
         const copyRect = document.getElementById(elem + "-copy");
@@ -21,5 +26,20 @@
   <body class="antialiased text-stone-900 bg-white text-sm">
     {{ partial "aside" . }}
     <main class="p-5 md:ml-60">{{ block "main" . }}{{ end }}</main>
+    <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+    <script type="text/javascript">
+      docsearch({
+        appId: "RMNJ9XLDDW",
+        apiKey: "9dfa2e64c920fb36da60161e201a46c3",
+        indexName: "copybook",
+        container: "#docsearch",
+        placeholder: "Search and filter...",
+        getMissingResultsUrl({ query }) {
+          return (
+            "https://github.com/praveenjuge/copybook/issues/new?title=" + query
+          );
+        },
+      });
+    </script>
   </body>
 </html>

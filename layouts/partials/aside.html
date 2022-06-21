@@ -1,7 +1,7 @@
 <aside
   class="bg-stone-50 md:border-r border-stone-100 p-5 md:w-60 font-medium md:min-h-screen h-full md:fixed left-0 top-0 bottom-0 flex flex-col space-y-5 md:space-y-7 md:overflow-x-hidden overflow-y-auto"
 >
-  <div class="flex-1 space-y-5 md:space-y-6">
+  <div class="flex-1 space-y-5">
     <a href="/">
       <svg
         width="115"
@@ -18,9 +18,10 @@
         />
       </svg>
     </a>
+    <div id="docsearch"></div>
     <div class="space-x-2 md:space-x-0 md:space-y-0.5 hidden md:flex flex-wrap md:flex-col md:items-start">
       <a href="/tags/" class="text-stone-500 hover:text-stone-900">Tags</a>
-      {{ range first 7 (.Site.Taxonomies.tags.ByCount) }}
+      {{ range first 5 (.Site.Taxonomies.tags.ByCount) }}
         <a href="{{ .Page.Permalink }}">#{{ .Page.Title }}</a>
       {{ end }}
       <a href="/tags/" class="hover:text-stone-900 flex space-x-0.5 items-center group">
@@ -30,7 +31,7 @@
     </div>
     <div class="space-x-2 md:space-x-0 md:space-y-0.5 hidden md:flex flex-wrap md:flex-col md:items-start">
       <a href="/categories/" class="text-stone-500 hover:text-stone-900">Categories</a>
-      {{ range first 7 (.Site.Taxonomies.categories.ByCount) }}
+      {{ range first 5 (.Site.Taxonomies.categories.ByCount) }}
         <a href="{{ .Page.Permalink }}">{{ .Page.Title | title }}</a>
       {{ end }}
       <a href="/categories/" class="hover:text-stone-900 flex space-x-0.5 items-center group">
@@ -40,7 +41,7 @@
     </div>
     <div class="space-x-2 md:space-x-0 md:space-y-0.5 hidden md:flex flex-wrap md:flex-col md:items-start">
       <a href="/mood/" class="text-stone-500 hover:text-stone-900">Mood</a>
-      {{ range first 7 (.Site.Taxonomies.mood.ByCount) }}
+      {{ range first 5 (.Site.Taxonomies.mood.ByCount) }}
         <a href="{{ .Page.Permalink }}">{{ .Page.Title | title }}</a>
       {{ end }}
       <a href="/mood/" class="hover:text-stone-900 flex space-x-0.5 items-center group">

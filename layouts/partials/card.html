@@ -13,7 +13,7 @@
   
   {{ else }}
   
-    {{ range (.Paginate .Pages.ByDate.Reverse).Pages }}
+    {{ range (.Paginate .Pages.ByLastmod.Reverse).Pages }}
       {{ partial "copy-card" . }}
     {{ end }}
 

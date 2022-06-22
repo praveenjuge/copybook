@@ -1,7 +1,7 @@
 {{ define "main" }}
 
 <div
-  class="max-w-3xl mx-auto grid items-center md:grid-cols-3 gap-10 py-20 mb-6"
+  class="max-w-3xl mx-auto grid items-center md:grid-cols-3 gap-10 py-24 mb-6"
 >
   <div class="flex flex-col items-start col-span-2">
     <h1 class="text-3xl tracking-tight font-extrabold">
@@ -56,7 +56,7 @@
     aria-hidden="true"
     class="justify-center items-center h-48 hidden md:flex"
   >
-    <img id="imagetag" src="images/emoji/99.jpg" class="flex h-48" />
+    <img id="imagetag" src="images/emoji/56.jpg" class="flex h-48" />
   </div>
 </div>
 
@@ -67,7 +67,7 @@
     return Math.floor(Math.random() * (max - min)) + min;
   }
   document.getElementById("imagetag").src =
-    "images/emoji/" + getRandomInt(1, 111) + ".jpg";
+    "images/emoji/" + getRandomInt(1, 168) + ".jpg";
 </script>
 
 {{ partial "card" . }} {{ end }}

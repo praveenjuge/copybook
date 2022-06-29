@@ -2,11 +2,11 @@
   <a
     href="{{.Permalink}}"
     id="{{ .File.UniqueID }}-content"
-    class="select-all p-5 rounded-t-lg border-stone-200 flex-1"
+    class="select-all p-5 rounded-t-lg flex-1 focus:outline-none focus:bg-stone-100"
   >
     {{.Content}}
   </a>
-  <div class="flex justify-between items-center w-full px-5 py-4 text-xs select-none rounded-b-lg  border-stone-200">
+  <div class="flex justify-between items-center w-full px-5 py-4 text-xs select-none rounded-b-lg">
     {{ with .Params.categories }}
       <a class="font-medium text-stone-600 hover:text-stone-900 transition" href="{{ "/categories/" }}{{ . | urlize }}">{{ . | title }}</a>
     {{ end }}

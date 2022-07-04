@@ -1,32 +1,35 @@
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 font-medium gap-6">
-  {{ if eq .Kind "taxonomy" }} 
-
-    {{ range (.Paginate .Pages).Pages }}
-      <a
-        class="rounded-lg p-5 block transition border border-stone-200 hover:border-stone-300"
-        href="{{.Permalink}}"
-      >
-        {{ if in .Permalink "/tags" }} #{{.Title | urlize}} {{ else }} {{.Title |
-        title}} {{ end }}
-      </a>
-    {{ end }} 
-  
-  {{ else }}
-  
-    {{ range (.Paginate .Pages.ByLastmod.Reverse).Pages }}
-      {{ partial "copy-card" . }}
-    {{ end }}
-
-  {{ end }}
+  {{ if eq .Kind "taxonomy" }} {{ range (.Paginate .Pages).Pages }}
+  <a
+    class="rounded-lg p-5 transition border border-stone-200 hover:border-stone-300 flex justify-between space-x-1"
+    href="{{.Permalink}}"
+  >
+    <span>
+      {{ if in .Permalink "/tags" }} #{{.Title | urlize}} {{ else }} {{.Title |
+      title}} {{ end }}
+    </span>
+    <span class="text-stone-500 font-normal">{{ len .RegularPages }} </span>
+  </a>
+  {{ end }} {{ else }} {{ range (.Paginate .Pages.ByLastmod.Reverse).Pages }} {{
+  partial "copy-card" . }} {{ end }} {{ end }}
 </div>
 
 {{ if .Paginator }}
-  <div class="flex justify-center items-center space-x-2 py-10 font-medium text-stone-800">
-    {{ if .Paginator.HasPrev }}
-      <a href="{{ .Paginator.Prev.URL }}" class="transition px-5 py-3 border border-stone-200 hover:border-stone-300 rounded-lg">← Prev</a>
-    {{ end }}
-    {{ if .Paginator.HasNext }}
-      <a href="{{ .Paginator.Next.URL }}" class="transition px-5 py-3 border border-stone-200 hover:border-stone-300 rounded-lg">Next →</a>
-    {{ end }}
-  </div>
+<div
+  class="flex justify-center items-center space-x-2 py-10 font-medium text-stone-800"
+>
+  {{ if .Paginator.HasPrev }}
+  <a
+    href="{{ .Paginator.Prev.URL }}"
+    class="transition px-5 py-3 border border-stone-200 hover:border-stone-300 rounded-lg"
+    >← Prev</a
+  >
+  {{ end }} {{ if .Paginator.HasNext }}
+  <a
+    href="{{ .Paginator.Next.URL }}"
+    class="transition px-5 py-3 border border-stone-200 hover:border-stone-300 rounded-lg"
+    >Next →</a
+  >
+  {{ end }}
+</div>
 {{ end }}

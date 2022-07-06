@@ -1,7 +1,7 @@
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 font-medium gap-6">
   {{ if eq .Kind "taxonomy" }} {{ range (.Paginate .Pages).Pages }}
   <a
-    class="rounded-lg p-5 transition border border-stone-200 hover:border-stone-300 flex justify-between space-x-1"
+    class="rounded-lg p-5 transition border border-stone-200 dark:border-stone-800 hover:border-stone-300 dark:hover:border-stone-700 dark:bg-stone-800 flex justify-between space-x-1"
     href="{{.Permalink}}"
   >
     <span>
@@ -16,18 +16,18 @@
 
 {{ if .Paginator }}
 <div
-  class="flex justify-center items-center space-x-2 py-10 font-medium text-stone-800"
+  class="flex justify-center items-center space-x-2 py-10 font-medium text-stone-800 dark:text-stone-100"
 >
   {{ if .Paginator.HasPrev }}
   <a
     href="{{ .Paginator.Prev.URL }}"
-    class="transition px-5 py-3 border border-stone-200 hover:border-stone-300 rounded-lg"
+    class="transition px-5 py-3 border border-stone-200 dark:border-stone-800 hover:border-stone-300 dark:hover:border-stone-700 dark:bg-stone-800 rounded-lg"
     >← Prev</a
   >
   {{ end }} {{ if .Paginator.HasNext }}
   <a
     href="{{ .Paginator.Next.URL }}"
-    class="transition px-5 py-3 border border-stone-200 hover:border-stone-300 rounded-lg"
+    class="transition px-5 py-3 border border-stone-200 dark:border-stone-800 hover:border-stone-300 dark:hover:border-stone-700 dark:bg-stone-800 rounded-lg"
     >Next →</a
   >
   {{ end }}

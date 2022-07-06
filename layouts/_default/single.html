@@ -5,13 +5,13 @@
     <div class="flex space-x-4">
       <a
         href="javascript:history.back()"
-        class="text-stone-800 hover:text-stone-900 transition font-medium border border-stone-200 hover:border-stone-300 rounded-full px-4 py-2"
+        class="text-stone-800 dark:text-stone-200 hover:text-stone-900 dark:hover:text-white transition font-medium border border-stone-200 dark:border-stone-800 hover:border-stone-300 dark:hover:border-stone-700 rounded-full px-4 py-2"
       >
         ← Go back
       </a>
     </div>
     <a     
-      class="text-stone-800 hover:text-stone-900 transition font-medium border border-stone-200 hover:border-stone-300 rounded-full px-4 py-2" 
+      class="text-stone-800 dark:text-stone-200 hover:text-stone-900 dark:hover:text-white transition font-medium border border-stone-200 dark:border-stone-800 hover:border-stone-300 dark:hover:border-stone-700 rounded-full px-4 py-2" 
       href=https://github.com/praveenjuge/copybook/blob/main/content/{{ .File.Path }}
       target="_blank"
       rel="noopener noreferrer"
@@ -21,12 +21,12 @@
   </div>
 
   <div
-    class="bg-stone-50 border border-stone-100 rounded-lg p-10 block text-base font-semibold text-center select-all"
+    class="bg-stone-50 dark:bg-stone-800 border border-stone-100 dark:border-stone-800 rounded-lg p-10 block text-base font-semibold text-center select-all"
   >
     {{ .Content }}
   </div>
 
-  <div class="divide-y divide-stone-200">
+  <div class="divide-y divide-stone-200 dark:divide-stone-800">
     {{ with .Params.categories }}
       <div class="flex justify-between items-center py-3.5">
         <p class="text-stone-500">Category</p>

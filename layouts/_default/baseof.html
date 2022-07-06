@@ -23,7 +23,9 @@
       };
     </script>
   </head>
-  <body class="antialiased text-stone-900 bg-white text-sm">
+  <body
+    class="antialiased text-stone-900 bg-white dark:bg-stone-900 dark:text-slate-100 text-sm"
+  >
     {{ partial "aside" . }}
     <main class="p-5 md:ml-60">{{ block "main" . }}{{ end }}</main>
     <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>

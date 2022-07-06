@@ -7,7 +7,7 @@
     <h1 class="text-3xl tracking-tight font-extrabold">
       Copy book is a collection of commonly used texts.
     </h1>
-    <p class="text-gray-500 text-base mt-3 mb-5">
+    <p class="text-stone-500 text-base mt-3 mb-5">
       So whenever you need a copy for a design or if you ever get stuck in the
       middle of development, you can use copy book.
     </p>
@@ -17,7 +17,7 @@
         target="_blank"
         rel="noopener noreferrer"
         href="https://github.com/sponsors/praveenjuge"
-        class="flex select-none appearance-none items-center justify-center space-x-1.5 rounded-full bg-stone-900 px-4 py-2.5 text-sm font-semibold text-gray-50 transition hover:bg-black focus:outline-none focus:ring focus:ring-stone-400"
+        class="flex select-none appearance-none items-center justify-center space-x-1.5 rounded-full bg-stone-900 dark:bg-stone-200 px-4 py-2.5 text-sm font-semibold text-stone-50 dark:text-stone-800 transition hover:bg-black dark:hover:bg-white focus:outline-none focus:ring focus:ring-stone-400 dark:focus:ring-stone-600"
       >
         <svg
           aria-hidden="true"
@@ -36,7 +36,7 @@
         target="_blank"
         rel="noopener noreferrer"
         href="https://twitter.com/praveenjuge"
-        class="flex select-none appearance-none items-center justify-center space-x-1.5 rounded-full bg-sky-500 px-4 py-2.5 text-sm font-semibold text-gray-50 transition hover:bg-sky-600 focus:outline-none focus:ring focus:ring-sky-300"
+        class="flex select-none appearance-none items-center justify-center space-x-1.5 rounded-full bg-sky-500 px-4 py-2.5 text-sm font-semibold text-stone-50 transition hover:bg-sky-600 focus:outline-none focus:ring focus:ring-sky-300 dark:focus:ring-sky-800"
       >
         <svg
           aria-hidden="true"
@@ -54,12 +54,12 @@
   </div>
   <div
     aria-hidden="true"
-    class="justify-center items-center h-48 hidden md:flex select-none"
+    class="justify-center items-center h-48 w-48 hidden md:flex select-none"
   >
     <img
       id="imagetag"
-      src="images/emoji/56.jpg"
-      class="flex h-48 select-none"
+      src="images/emoji/56.png"
+      class="flex h-48 w-48 select-none"
     />
   </div>
 </div>
@@ -71,7 +71,7 @@
     return Math.floor(Math.random() * (max - min)) + min;
   }
   document.getElementById("imagetag").src =
-    "images/emoji/" + getRandomInt(1, 168) + ".jpg";
+    "images/emoji/" + getRandomInt(1, 168) + ".png";
 </script>
 
 {{ partial "card" . }} {{ end }}

@@ -5,4 +5,4 @@ tags:
   - accounts
   - authentication
 ---
-Alreadv have an account? Log in
+Already have an account? Log in

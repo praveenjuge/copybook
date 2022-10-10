@@ -5,4 +5,4 @@ tags:
   - settings
   - error
 ---
-There was an error accepting invite. Please contact the site's administrator.
+There was an error accepting invite. Contact the site's administrator.

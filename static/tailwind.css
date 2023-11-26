@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@keyframes slidecta {
+  to {
+    transform: translateY(-69%);
+  }
+}
+
 :root {
   --docsearch-primary-color: #1c1917;
   --docsearch-text-color: #1c1917;

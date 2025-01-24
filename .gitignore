@@ -6,3 +6,4 @@ package-lock.json
 node_modules/
 static/main.css
 .netlify
+bun.lockb

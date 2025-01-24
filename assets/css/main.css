@@ -1,6 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
 @keyframes slidecta {
   to {
@@ -46,7 +44,7 @@
 .DocSearch-Button:active,
 .DocSearch-Button:focus,
 .DocSearch-Button:hover {
-  @apply border-stone-300 dark:border-stone-700 text-stone-900 dark:text-stone-100 transition outline-none;
+  @apply border-stone-300 dark:border-stone-700 text-stone-900 dark:text-stone-100 transition outline-hidden;
 }
 .DocSearch-Button-Container {
   align-items: center;
@@ -67,7 +65,7 @@
   margin-right: 0.2em;
   position: relative;
   width: 18px;
-  @apply text-stone-500 bg-stone-100 dark:bg-stone-800 border border-stone-200 dark:border-stone-800 rounded grid place-items-center text-xs font-medium transition;
+  @apply text-stone-500 bg-stone-100 dark:bg-stone-800 border border-stone-200 dark:border-stone-800 rounded-sm grid place-items-center text-xs font-medium transition;
 }
 @media (max-width: 750px) {
   .DocSearch-Button-Keys {

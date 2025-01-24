@@ -4,7 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     {{ partial "meta" . }}
-    <link rel="stylesheet" href="/main.css" />
+    {{ with resources.Get "css/main.css" }}
+      {{ $opts := dict "minify" true }}
+      {{ with . | css.TailwindCSS $opts }}
+        {{ if hugo.IsDevelopment }}
+          <link rel="stylesheet" href="{{ .RelPermalink }}">
+        {{ else }}
+          {{ with . | fingerprint }}
+            <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+          {{ end }}
+        {{ end }}
+      {{ end }}
+    {{ end }}
     <link
       rel="preconnect"
       href="https://RMNJ9XLDDW-dsn.algolia.net"

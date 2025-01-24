@@ -6,7 +6,9 @@ enableRobotsTXT = true
 enableEmoji = true
 enableGitInfo = true
 canonifyURLs = true
-paginate = 75
+
+[pagination]
+  pagerSize = 75
 
 [outputs]
   home = ['HTML', 'RSS', 'JSON']
@@ -21,9 +23,14 @@ paginate = 75
   og_image = "/images/og.jpg"
   sitename = "Copy Book"
 
-[author]
+[params.author]
   name = "Praveen Juge"
   github = "praveenjuge"
   twitter = "praveenjuge"
   dribbble = "praveenjuge"
   behance = "praveenjuge"
+
+[build]
+  [[build.cachebusters]]
+    source = 'layouts/.*'
+    target = 'css'

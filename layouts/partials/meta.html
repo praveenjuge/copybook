@@ -69,13 +69,13 @@
 
 <!-- Meta Tags for Website Pages -->
 <meta property="og:type" content="website" />
-<meta name="author" content="{{ .Site.Author.name }}" />
+<meta name="author" content="{{ .Site.Params.Author.name }}" />
 <script defer type="application/ld+json">
   {
     "@context": "http://schema.org",
     "@type": "WebSite",
     "url": "{{ .Permalink }}",
-    "sameAs": ["{{ .Site.Author.github }}"],
+    "sameAs": ["{{ .Site.Params.Author.github }}"],
     "name": "{{ .Title }}",
     "logo": "https://copybook.me/images/brand/favicon.png"
   }
@@ -86,8 +86,8 @@
 <meta name="googlebot" content="index,follow" />
 
 <!-- Social Media Tags -->
-<meta name="twitter:site" content="{{ .Site.Author.twitter }}" />
-<meta name="twitter:creator" content="{{ .Site.Author.twitter }}" />
+<meta name="twitter:site" content="{{ .Site.Params.Author.twitter }}" />
+<meta name="twitter:creator" content="{{ .Site.Params.Author.twitter }}" />
 
 <!-- Other Tags -->
 <meta name="twitter:card" content="summary_large_image" />
